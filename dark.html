@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MV Solutions | Transform Your Business Digitally</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#0a0e17",
+                    "outline": "#737686",
+                    "surface-container-low": "#121726",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#0066ff",
+                    "secondary": "#ff0000",
+                    "tertiary-fixed-dim": "#a5b4fc",
+                    "inverse-primary": "#0066ff",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#cbd5e1",
+                    "surface-tint": "#0066ff",
+                    "on-primary-container": "#ffffff",
+                    "tertiary": "#8b5cf6",
+                    "surface-container-highest": "#1e293b",
+                    "primary": "#0066ff",
+                    "surface": "#ffffff",
+                    "on-secondary-fixed-variant": "#ff0000",
+                    "surface-container-lowest": "#05070a",
+                    "surface-container-high": "#1e293b",
+                    "on-tertiary-fixed": "#eef2ff",
+                    "primary-fixed-dim": "#0066ff",
+                    "inverse-on-surface": "#0a0e17",
+                    "surface-container": "#111827",
+                    "inverse-surface": "#f8fafc",
+                    "primary-fixed": "#e0f2fe",
+                    "secondary-container": "#ff0000",
+                    "on-error-container": "#ffffff",
+                    "surface-bright": "#1e293b",
+                    "on-primary-fixed": "#0a0e17",
+                    "surface-variant": "#1e293b",
+                    "error-container": "#991b1b",
+                    "outline-variant": "#334155",
+                    "secondary-fixed-dim": "#ff0000",
+                    "background": "#0a0e17",
+                    "surface-dim": "#0a0e17",
+                    "error": "#ef4444",
+                    "tertiary-fixed": "#ddd6fe",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#0066ff",
+                    "on-tertiary-container": "#ffffff",
+                    "on-background": "#ffffff",
+                    "on-secondary-fixed": "#ffffff",
+                    "on-secondary-container": "#ffffff",
+                    "secondary-fixed": "#fce7f3",
+                    "on-tertiary-fixed-variant": "#8b5cf6",
+                    "tertiary-container": "#1e293b",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "lg": "48px",
+                    "container-max": "1200px",
+                    "xs": "8px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "sm": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-xl-mobile": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-xl-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05070a; color: #ffffff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(10, 14, 23, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+        
+        /* Intensified Glow Effects */
+        .glow-blue { box-shadow: 0 0 35px rgba(0, 102, 255, 0.4); border-color: rgba(0, 102, 255, 0.6); }
+        .glow-red { box-shadow: 0 0 35px rgba(255, 0, 0, 0.4); border-color: rgba(255, 0, 0, 0.6); }
+        .glow-blue-hover:hover { box-shadow: 0 0 50px rgba(0, 102, 255, 0.6); }
+        .glow-red-hover:hover { box-shadow: 0 0 50px rgba(255, 0, 0, 0.6); }
+        
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(0, 102, 255, 0.25) 0%, transparent 60%), radial-gradient(circle at 100% 50%, rgba(255, 0, 0, 0.15) 0%, transparent 50%); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        
+        .nav-link-active { border-bottom: 2px solid #0066ff; color: #0066ff; }
+        
+        /* Interactive button styles */
+        .btn-interact { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+        .btn-interact:active { transform: scale(0.95); }
+    </style>
+</head>
+<body class="bg-on-surface text-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full bg-on-surface/95 backdrop-blur-md border-b border-white/10 shadow-xl">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="text-headline-md font-bold text-primary">MV Solutions</span>
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="nav-link-active pb-1 font-label-md text-label-md" href="#" onclick="console.log('Navigated to About Us')">About Us</a>
+<a class="text-slate-400 hover:text-primary transition-all font-label-md text-label-md" href="#" onclick="console.log('Navigated to Technology')">Technology</a>
+<a class="text-slate-400 hover:text-primary transition-all font-label-md text-label-md" href="#" onclick="console.log('Navigated to Solutions')">Solutions</a>
+<a class="text-slate-400 hover:text-primary transition-all font-label-md text-label-md" href="#" onclick="console.log('Navigated to Products')">Products</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary hover:text-secondary transition-all p-2 rounded-full hover:bg-white/5" onclick="console.log('Toggle Theme')">light_mode</button>
+<button class="btn-interact bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-full font-label-md text-label-md shadow-[0_0_15px_rgba(0,102,255,0.4)] hover:shadow-[0_0_25px_rgba(0,102,255,0.6)]" onclick="console.log('Contact Us clicked')">Contact Us</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-40 pb-24 px-gutter overflow-hidden hero-gradient">
+<div class="max-w-container-max mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-primary/40 mb-8 animate-float">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-label-md font-label-md text-primary">Innovative Digital Solutions</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-6 tracking-tight text-white">
+            Transform Your <span class="text-secondary">Business</span><br/>
+<span class="text-primary">Digitally</span>
+</h1>
+<p class="max-w-2xl mx-auto text-body-lg text-slate-300 mb-10">
+            MV Services and Solutions helps businesses provide IT solutions and convert their businesses digitally. We provide all types of innovative solutions: websites, Android and iOS Applications.
+        </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="btn-interact bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 glow-blue shadow-[0_0_20px_rgba(0,102,255,0.5)] hover:shadow-[0_0_40px_rgba(0,102,255,0.7)]" onclick="console.log('Get Started action')">
+                Get Started <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="btn-interact bg-secondary text-white px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 glow-red shadow-[0_0_20px_rgba(255,0,0,0.5)] hover:shadow-[0_0_40px_rgba(255,0,0,0.7)]" onclick="console.log('View Our Work action')">
+                View Our Work <span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+<div class="mt-16 flex flex-wrap justify-center gap-md text-slate-400 font-label-md text-label-md">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">code</span> WordPress Development</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">storage</span> MERN Stack</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">smartphone</span> Mobile Apps</div>
+</div>
+</div>
+</section>
+<!-- About Us & Stats -->
+<section class="py-xl px-gutter bg-on-surface" id="about">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-primary">About Us</h2>
+<div class="w-20 h-1 bg-secondary mx-auto mb-8 rounded-full shadow-[0_0_10px_rgba(255,0,0,0.5)]"></div>
+<p class="max-w-3xl mx-auto text-body-md text-slate-300 mb-12">
+            MV Services and Solutions helps Businesses to provide IT solutions and convert their businesses digitally. We provide all types of innovative solutions: websites, Android and iOS Applications. We believe in making our customer's life easier by providing user friendly and secure applications.
+        </p>
+<div class="glass-card p-6 rounded-2xl max-w-2xl mx-auto mb-16 italic text-slate-200 border-white/10 glow-blue">
+            "You focus on your business while let us handle your IT and digital needs"
+            <span class="block mt-2 text-secondary font-bold not-italic">Our Motto</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="p-8 glass-card rounded-2xl border-t-4 border-t-primary glow-blue glow-blue-hover">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">rocket</span>
+<h3 class="text-display-xl font-display-xl text-white">100+</h3>
+<p class="text-label-md text-slate-400 uppercase tracking-wider">Projects Delivered</p>
+</div>
+<div class="p-8 glass-card rounded-2xl border-t-4 border-t-secondary glow-red glow-red-hover">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">groups</span>
+<h3 class="text-display-xl font-display-xl text-white">50+</h3>
+<p class="text-label-md text-slate-400 uppercase tracking-wider">Happy Clients</p>
+</div>
+<div class="p-8 glass-card rounded-2xl border-t-4 border-t-primary glow-blue glow-blue-hover">
+<span class="material-symbols-outlined text-4xl text-primary mb-2">award_star</span>
+<h3 class="text-display-xl font-display-xl text-white">5+</h3>
+<p class="text-label-md text-slate-400 uppercase tracking-wider">Years Experience</p>
+</div>
+<div class="p-8 glass-card rounded-2xl border-t-4 border-t-secondary glow-red glow-red-hover">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2">trending_up</span>
+<h3 class="text-display-xl font-display-xl text-white">98%</h3>
+<p class="text-label-md text-slate-400 uppercase tracking-wider">Success Rate</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technology Stack -->
+<section class="py-xl px-gutter" id="technology">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2">Technology Stack</h2>
+<p class="text-slate-400 font-body-md">Cutting-edge technologies for modern solutions</p>
+</div>
+<div class="grid md:grid-cols-2 gap-md">
+<!-- WordPress Card -->
+<div class="group relative overflow-hidden glass-card p-xl rounded-3xl hover:border-primary/50 glow-blue-hover">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl text-primary/10 group-hover:text-primary/20 transition-all duration-500">terminal</span>
+</div>
+<div class="bg-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(0,102,255,0.5)] group-hover:shadow-[0_0_35px_rgba(0,102,255,0.8)] transition-all">
+<span class="material-symbols-outlined text-on-primary text-3xl">code</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6">WordPress Development</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Fully responsive design (mobile, tablet, desktop)
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Modern UI/UX aligned with your brand identity
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Easy-to-manage CMS for content updates
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        SEO-friendly structure
+                    </li>
+</ul>
+</div>
+<!-- MERN Card -->
+<div class="group relative overflow-hidden glass-card p-xl rounded-3xl hover:border-secondary/50 glow-red-hover">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl text-secondary/10 group-hover:text-secondary/20 transition-all duration-500">dataset</span>
+</div>
+<div class="bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(255,0,0,0.5)] group-hover:shadow-[0_0_35px_rgba(255,0,0,0.8)] transition-all">
+<span class="material-symbols-outlined text-white text-3xl">layers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-6">MERN Stack Development</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        MongoDB, Express.js, React.js, Node.js
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Fully custom-coded, scalable web application
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Responsive &amp; performance-optimized design
+                    </li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Admin dashboard product management
+                    </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- USPs Section -->
+<section class="py-xl px-gutter bg-white/[0.02]">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">USPs Of Our Solutions</h2>
+<p class="text-slate-400 font-body-md">Why choose our development approach</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<div class="glass-card p-6 rounded-2xl border-b-2 border-primary hover:bg-white/5 transition-all glow-blue-hover cursor-default">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">settings</span>
+<h4 class="font-bold text-white mb-2">Fully Customizable</h4>
+<p class="text-label-md text-slate-400">Unlike WordPress theme/plugin dependent, MERN allows building every feature from scratch as per your exact requirements.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-secondary hover:bg-white/5 transition-all glow-red-hover cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">trending_up</span>
+<h4 class="font-bold text-white mb-2">High Scalability</h4>
+<p class="text-label-md text-slate-400">Perfect for future growth—easy to integrate new modules like e-commerce, CRM, ERP, or APIs.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-primary hover:bg-white/5 transition-all glow-blue-hover cursor-default">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">bolt</span>
+<h4 class="font-bold text-white mb-2">Performance Optimized</h4>
+<p class="text-label-md text-slate-400">React ensures lightning-fast front-end rendering and smooth user experience.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-secondary hover:bg-white/5 transition-all glow-red-hover cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">security</span>
+<h4 class="font-bold text-white mb-2">Better Security</h4>
+<p class="text-label-md text-slate-400">With Node.js &amp; Express, you get more control over data security compared to plugin-heavy CMS systems.</p>
+</div>
+<!-- Row 2 -->
+<div class="glass-card p-6 rounded-2xl border-b-2 border-primary hover:bg-white/5 transition-all glow-blue-hover cursor-default">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">layers</span>
+<h4 class="font-bold text-white mb-2">Modern Tech Stack</h4>
+<p class="text-label-md text-slate-400">Used by global tech companies (Netflix, Uber, PayPal), ensuring future-ready development.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-secondary hover:bg-white/5 transition-all glow-red-hover cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">dashboard</span>
+<h4 class="font-bold text-white mb-2">Advanced Admin Dashboard</h4>
+<p class="text-label-md text-slate-400">A tailored backend to manage products, content, or customer data seamlessly.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-primary hover:bg-white/5 transition-all glow-blue-hover cursor-default">
+<span class="material-symbols-outlined text-primary text-3xl mb-4">devices</span>
+<h4 class="font-bold text-white mb-2">SEO &amp; Mobile Friendly</h4>
+<p class="text-label-md text-slate-400">React supports server-side rendering (SSR) for improved SEO and fast mobile responsiveness.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-b-2 border-secondary hover:bg-white/5 transition-all glow-red-hover cursor-default">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">verified</span>
+<h4 class="font-bold text-white mb-2">Long-Term Value</h4>
+<p class="text-label-md text-slate-400">Though initial cost &amp; timeline are higher, maintenance is easier and long-term ROI is better.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Products Section -->
+<section class="py-xl px-gutter" id="products">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-white">Our <span class="text-secondary">Products</span></h2>
+<p class="max-w-2xl mx-auto text-slate-400">
+                Attendance Tracking System — A smart workforce management solution designed for organizations to monitor employee attendance using real-time GPS location tracking.
+            </p>
+</div>
+<div class="grid lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 space-y-md">
+<div class="glass-card p-md rounded-2xl glow-blue">
+<h4 class="text-primary font-bold mb-4">Solution Overview</h4>
+<p class="text-label-md text-slate-300">The system captures live Google location coordinates during Check-In and Check-Out and compares them with predefined office or project site coordinates configured by the administrator.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+<div class="flex flex-col items-center p-4 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary mb-2">smartphone</span>
+<span class="text-[12px] text-center text-slate-300">Android Application</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl border border-secondary/20 bg-secondary/5 hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2">phone_iphone</span>
+<span class="text-[12px] text-center text-slate-300">iOS Application</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary mb-2">laptop_mac</span>
+<span class="text-[12px] text-center text-slate-300">Admin Panel</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl border border-secondary/20 bg-secondary/5 hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2">database</span>
+<span class="text-[12px] text-center text-slate-300">Secure Database</span>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="glass-card p-6 rounded-2xl border-l-4 border-primary hover:border-l-8 transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">my_location</span>
+<h4 class="font-bold text-white">Live GPS Attendance</h4>
+</div>
+<p class="text-label-md text-slate-400">Employees can mark Check-In and Check-Out with live GPS coordinates and device details.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-l-4 border-secondary hover:border-l-8 transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<h4 class="font-bold text-white">Geo-Location Validation</h4>
+</div>
+<p class="text-label-md text-slate-400">System validates attendance within configured radius of office/project sites.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-l-4 border-primary hover:border-l-8 transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">apps</span>
+<h4 class="font-bold text-white">Mobile Applications</h4>
+</div>
+<p class="text-label-md text-slate-400">Native apps with secure login, Maps integration, and leave management.</p>
+</div>
+<div class="glass-card p-6 rounded-2xl border-l-4 border-secondary hover:border-l-8 transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary">admin_panel_settings</span>
+<h4 class="font-bold text-white">Admin Backend Panel</h4>
+</div>
+<p class="text-label-md text-slate-400">Comprehensive dashboard for employee management and real-time reports.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-md">
+<div class="glass-card p-6 rounded-2xl glow-red">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h4 class="font-bold text-white">Security Features</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-2 text-label-md text-slate-400"><span class="material-symbols-outlined text-primary text-xs">done</span> SSL Secure APIs</li>
+<li class="flex items-center gap-2 text-label-md text-slate-400"><span class="material-symbols-outlined text-primary text-xs">done</span> Device Binding</li>
+<li class="flex items-center gap-2 text-label-md text-slate-400"><span class="material-symbols-outlined text-primary text-xs">done</span> GPS Mock Detection</li>
+<li class="flex items-center gap-2 text-label-md text-slate-400"><span class="material-symbols-outlined text-primary text-xs">done</span> Encrypted Passwords</li>
+</ul>
+</div>
+<div class="glass-card p-6 rounded-2xl border-t-2 border-secondary glow-red-hover">
+<h4 class="font-bold mb-4 text-white">Technology Stack</h4>
+<div class="space-y-6">
+<div>
+<h5 class="text-[12px] font-bold text-primary uppercase tracking-tighter mb-2">Mobile</h5>
+<p class="text-label-md text-slate-400">Kotlin • Swift • Google Maps • Firebase</p>
+</div>
+<div>
+<h5 class="text-[12px] font-bold text-secondary uppercase tracking-tighter mb-2">Backend</h5>
+<p class="text-label-md text-slate-400">Node.js • Laravel • JWT • MySQL</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-xl px-gutter" id="contact">
+<div class="max-w-container-max mx-auto rounded-3xl overflow-hidden relative p-xl text-center bg-gradient-to-br from-primary/20 via-[#0a0e17] to-secondary/20 border border-white/10 glow-blue">
+<div class="relative z-10">
+<span class="inline-flex items-center gap-2 text-primary font-bold mb-4">
+<span class="material-symbols-outlined">auto_awesome</span>
+                Let's Build Something Amazing Together
+            </span>
+<h2 class="text-display-xl font-display-xl mb-6 text-white">Ready to Transform Your Business?</h2>
+<p class="max-w-2xl mx-auto text-slate-400 mb-10 text-body-lg">
+                Let us handle your IT and digital needs while you focus on growing your business. Our team of experts is ready to bring your vision to life.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="btn-interact bg-white text-[#0a0e17] hover:bg-slate-200 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-xl" onclick="console.log('Consultation Form Requested')">
+<span class="material-symbols-outlined">support_agent</span> Get a Free Consultation
+                </button>
+<button class="btn-interact bg-secondary text-white hover:brightness-110 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,0,0,0.4)] hover:shadow-[0_0_35px_rgba(255,0,0,0.6)]" onclick="console.log('Sales Contacted')">
+<span class="material-symbols-outlined">mail</span> Contact Sales
+                </button>
+</div>
+<div class="mt-12 flex flex-wrap justify-center gap-md text-slate-500 text-sm">
+<span>✓ 24/7 Support</span>
+<span>✓ 100% Satisfaction</span>
+<span>✓ Free Consultation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white/[0.03] pt-xl pb-gutter border-t border-white/10">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-xl text-left">
+<div class="col-span-1 md:col-span-1">
+<div class="text-display-xl font-display-xl text-primary mb-6 drop-shadow-[0_0_10px_rgba(0,102,255,0.5)]">MV</div>
+<p class="text-slate-400 font-body-md mb-6">
+                Providing innovative IT solutions and converting businesses digitally with cutting-edge technologies.
+            </p>
+<div class="flex gap-4">
+<a class="btn-interact w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:text-secondary border-primary/30" href="#" onclick="console.log('Share clicked')"><span class="material-symbols-outlined">share</span></a>
+<a class="btn-interact w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:text-secondary border-primary/30" href="#" onclick="console.log('Email clicked')"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-6">Services</h4>
+<ul class="space-y-4 text-slate-400 font-body-md">
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: WordPress')">WordPress Development</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: MERN')">MERN Stack Development</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Mobile')">Mobile App Development</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Custom')">Custom Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-6">Products</h4>
+<ul class="space-y-4 text-slate-400 font-body-md">
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Attendance')">Attendance Tracking</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: GPS')">GPS Solutions</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Dashboards')">Admin Dashboards</a></li>
+<li><a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Enterprise')">Enterprise Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white mb-6">Contact Us</h4>
+<ul class="space-y-4 text-slate-400 font-body-md">
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">mail</span> info@mvservices.com</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">phone</span> +1 (555) 123-4567</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">location_on</span> Your Business Address</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-gutter border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-md text-slate-500">© 2024 MV Services &amp; Solution. All rights reserved.</p>
+<div class="flex gap-6 text-label-md text-slate-500">
+<a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Privacy')">Privacy Policy</a>
+<a class="hover:text-primary transition-colors cursor-pointer" onclick="console.log('Link: Terms')">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Back to top -->
+<button class="fixed bottom-gutter right-gutter w-12 h-12 bg-primary text-on-primary rounded-full shadow-[0_0_20px_rgba(0,102,255,0.5)] flex items-center justify-center hover:scale-110 active:scale-90 transition-all z-50 group glow-blue-hover" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined group-hover:animate-bounce">arrow_upward</span>
+</button>
+<script>
+    // Button Interaction Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        const allButtons = document.querySelectorAll('button, .btn-interact');
+        allButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const ripple = document.createElement('span');
+                ripple.className = 'absolute bg-white/20 rounded-full pointer-events-none transform -translate-x-1/2 -translate-y-1/2 animate-ping';
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                btn.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+                
+                // Unified console log for demo
+                if (!btn.getAttribute('onclick')) {
+                    console.log('Action Triggered: Form Submitted / Request Logged');
+                }
+            });
+        });
+    });
+
+    // Glass card dynamic light effect with neon theme colors
+    document.addEventListener('mousemove', (e) => {
+        const cards = document.querySelectorAll('.glass-card');
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            if (x > rect.left && x < rect.right && y > rect.top && y < rect.bottom) {
+                const localX = x - rect.left;
+                const localY = y - rect.top;
+                
+                // Detect if card is themed blue or red for the glow
+                const isRed = card.classList.contains('glow-red') || card.classList.contains('border-t-secondary') || card.classList.contains('border-secondary');
+                const glowColor = isRed ? 'rgba(255, 0, 0, 0.12)' : 'rgba(0, 102, 255, 0.12)';
+                
+                card.style.background = `radial-gradient(circle at ${localX}px ${localY}px, ${glowColor} 0%, rgba(10, 14, 23, 0.7) 80%)`;
+            } else {
+                card.style.background = 'rgba(10, 14, 23, 0.7)';
+            }
+        });
+    });
+</script>
+</body></html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MV Solutions | Transform Your Business Digitally</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#0b1c30",
+                    "outline": "#737686",
+                    "surface-container-low": "#f0f4f8",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#2563eb",
+                    "secondary": "#b61722",
+                    "tertiary-fixed-dim": "#434655",
+                    "inverse-primary": "#004ac6",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "surface-tint": "#0053db",
+                    "on-primary-container": "#ffffff",
+                    "tertiary": "#4d556b",
+                    "surface-container-highest": "#e2e8f0",
+                    "primary": "#004ac6",
+                    "surface": "#ffffff",
+                    "on-secondary-fixed-variant": "#930013",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#f8fafc",
+                    "on-tertiary-fixed": "#131b2e",
+                    "primary-fixed-dim": "#004ac6",
+                    "inverse-on-surface": "#ffffff",
+                    "surface-container": "#f1f5f9",
+                    "inverse-surface": "#0b1c30",
+                    "primary-fixed": "#dbe1ff",
+                    "secondary-container": "#da3437",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "surface-variant": "#f1f5f9",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cbd5e1",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "background": "#ffffff",
+                    "surface-dim": "#f1f5f9",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-container": "#131b2e",
+                    "on-background": "#0b1c30",
+                    "on-secondary-fixed": "#410004",
+                    "on-secondary-container": "#ffffff",
+                    "secondary-fixed": "#ffdad7",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "tertiary-container": "#656d84",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "lg": "48px",
+                    "container-max": "1200px",
+                    "xs": "8px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "sm": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "display-xl-mobile": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "display-xl-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .glow-blue { box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08); }
+        .glow-red { box-shadow: 0 10px 30px rgba(182, 23, 34, 0.08); }
+        .hero-gradient { background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 50%), radial-gradient(circle at 100% 50%, rgba(182, 23, 34, 0.03) 0%, transparent 40%); }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary selection:text-white transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-headline-md font-bold text-on-surface">MV Solutions</span>
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Technology</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md" href="#">Products</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all" onclick="toggleDarkMode()">dark_mode</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full font-label-md text-label-md transition-all active:scale-95 duration-150 shadow-md hover:shadow-lg">Contact Us</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 px-gutter overflow-hidden hero-gradient bg-white">
+<div class="max-w-container-max mx-auto text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/20 mb-8 animate-float">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-label-md font-label-md text-primary">Innovative Digital Solutions</span>
+</div>
+<h1 class="font-display-xl text-display-xl mb-6 tracking-tight text-on-surface">
+            Transform Your <span class="text-secondary">Business</span><br/>
+<span class="text-primary">Digitally</span>
+</h1>
+<p class="max-w-2xl mx-auto text-body-lg text-on-surface-variant mb-10">
+            MV Services and Solutions helps businesses provide IT solutions and convert their businesses digitally. We provide all types of innovative solutions: websites, Android and iOS Applications.
+        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                Get Started <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-xl font-label-md text-label-md flex items-center gap-2 transition-all active:scale-95 shadow-lg shadow-secondary/20">
+                View Our Work <span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+<div class="mt-16 flex flex-wrap justify-center gap-md text-on-surface-variant/60 font-label-md text-label-md">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">code</span> WordPress Development</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">storage</span> MERN Stack</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">smartphone</span> Mobile Apps</div>
+</div>
+</div>
+</section>
+<!-- About Us & Stats -->
+<section class="py-xl px-gutter bg-surface-container-high">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-primary">About Us</h2>
+<div class="w-20 h-1 bg-secondary mx-auto mb-8 rounded-full"></div>
+<p class="max-w-3xl mx-auto text-body-md text-on-surface-variant mb-12">
+            MV Services and Solutions helps Businesses to provide IT solutions and convert their businesses digitally. We provide all types of innovative solutions: websites, Android and iOS Applications. We believe in making our customer's life easier by providing user friendly and secure applications.
+        </p>
+<div class="bg-white border border-outline-variant p-6 rounded-2xl max-w-2xl mx-auto mb-16 italic text-on-surface shadow-sm">
+            "You focus on your business while let us handle your IT and digital needs"
+            <span class="block mt-2 text-primary font-bold not-italic">Our Motto</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="p-8 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all glow-blue group">
+<span class="material-symbols-outlined text-4xl text-primary mb-2 group-hover:scale-110 transition-transform">rocket</span>
+<h3 class="text-display-xl font-display-xl text-on-surface">100+</h3>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider">Projects Delivered</p>
+</div>
+<div class="p-8 bg-white rounded-2xl border border-outline-variant hover:border-secondary/30 transition-all glow-red group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2 group-hover:scale-110 transition-transform">groups</span>
+<h3 class="text-display-xl font-display-xl text-on-surface">50+</h3>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider">Happy Clients</p>
+</div>
+<div class="p-8 bg-white rounded-2xl border border-outline-variant hover:border-primary/30 transition-all glow-blue group">
+<span class="material-symbols-outlined text-4xl text-primary mb-2 group-hover:scale-110 transition-transform">award_star</span>
+<h3 class="text-display-xl font-display-xl text-on-surface">5+</h3>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider">Years Experience</p>
+</div>
+<div class="p-8 bg-white rounded-2xl border border-outline-variant hover:border-secondary/30 transition-all glow-red group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-2 group-hover:scale-110 transition-transform">trending_up</span>
+<h3 class="text-display-xl font-display-xl text-on-surface">98%</h3>
+<p class="text-label-md text-on-surface-variant uppercase tracking-wider">Success Rate</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technology Stack -->
+<section class="py-xl px-gutter bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2">Technology Stack</h2>
+<p class="text-on-surface-variant font-body-md">Cutting-edge technologies for modern solutions</p>
+</div>
+<div class="grid md:grid-cols-2 gap-md">
+<!-- WordPress Card -->
+<div class="group relative overflow-hidden bg-surface-container-low border border-outline-variant p-xl rounded-3xl hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl text-primary/5 group-hover:text-primary/10 transition-all duration-500">terminal</span>
+</div>
+<div class="bg-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:rotate-6 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl">code</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">WordPress Development</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Fully responsive design (mobile, tablet, desktop)
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Modern UI/UX aligned with your brand identity
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        Easy-to-manage CMS for content updates
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                        SEO-friendly structure
+                    </li>
+</ul>
+</div>
+<!-- MERN Card -->
+<div class="group relative overflow-hidden bg-surface-container-low border border-outline-variant p-xl rounded-3xl hover:shadow-xl transition-all duration-500">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-6xl text-secondary/5 group-hover:text-secondary/10 transition-all duration-500">dataset</span>
+</div>
+<div class="bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-secondary/20 group-hover:-rotate-6 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl">layers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">MERN Stack Development</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        MongoDB, Express.js, React.js, Node.js
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Fully custom-coded, scalable web application
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Responsive &amp; performance-optimized design
+                    </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                        Admin dashboard product management
+                    </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- USPs Section -->
+<section class="py-xl px-gutter bg-surface-container-high">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">USPs Of Our Solutions</h2>
+<p class="text-on-surface-variant font-body-md">Why choose our development approach</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- USPs Cards -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-primary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:rotate-12 transition-transform">settings</span>
+<h4 class="font-bold text-on-surface mb-2">Fully Customizable</h4>
+<p class="text-label-md text-on-surface-variant">Unlike WordPress theme/plugin dependent, MERN allows building every feature from scratch.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-secondary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-hover:rotate-12 transition-transform">trending_up</span>
+<h4 class="font-bold text-on-surface mb-2">High Scalability</h4>
+<p class="text-label-md text-on-surface-variant">Perfect for future growth—easy to integrate new modules like e-commerce, CRM, ERP, or APIs.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-primary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:rotate-12 transition-transform">bolt</span>
+<h4 class="font-bold text-on-surface mb-2">Performance Optimized</h4>
+<p class="text-label-md text-on-surface-variant">React ensures lightning-fast front-end rendering and smooth user experience.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-secondary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-hover:rotate-12 transition-transform">security</span>
+<h4 class="font-bold text-on-surface mb-2">Better Security</h4>
+<p class="text-label-md text-on-surface-variant">With Node.js &amp; Express, you get more control over data security compared to plugin systems.</p>
+</div>
+<!-- Second Row -->
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-primary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:rotate-12 transition-transform">layers</span>
+<h4 class="font-bold text-on-surface mb-2">Modern Tech Stack</h4>
+<p class="text-label-md text-on-surface-variant">Used by global tech companies (Netflix, Uber, PayPal), ensuring future-ready development.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-secondary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-hover:rotate-12 transition-transform">dashboard</span>
+<h4 class="font-bold text-on-surface mb-2">Advanced Admin Dashboard</h4>
+<p class="text-label-md text-on-surface-variant">A tailored backend to manage products, content, or customer data seamlessly.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-primary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-primary text-3xl mb-4 group-hover:rotate-12 transition-transform">devices</span>
+<h4 class="font-bold text-on-surface mb-2">SEO &amp; Mobile Friendly</h4>
+<p class="text-label-md text-on-surface-variant">React supports server-side rendering (SSR) for improved SEO and fast mobile responsiveness.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-b-4 border-b-secondary hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4 group-hover:rotate-12 transition-transform">verified</span>
+<h4 class="font-bold text-on-surface mb-2">Long-Term Value</h4>
+<p class="text-label-md text-on-surface-variant">Initial cost &amp; timeline are higher, but maintenance is easier and long-term ROI is better.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Products Section -->
+<section class="py-xl px-gutter bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Our <span class="text-secondary">Products</span></h2>
+<p class="max-w-2xl mx-auto text-on-surface-variant">
+                Attendance Tracking System — A smart workforce management solution designed for organizations to monitor employee attendance using real-time GPS location tracking.
+            </p>
+</div>
+<!-- Product Showcase Grid -->
+<div class="grid lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 space-y-md">
+<div class="bg-surface-container-low border border-outline-variant p-md rounded-2xl">
+<h4 class="text-primary font-bold mb-4">Solution Overview</h4>
+<p class="text-label-md text-on-surface-variant">The system captures live Google location coordinates during Check-In and Check-Out and compares them with predefined office or project site coordinates configured by the administrator.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+<div class="flex flex-col items-center p-4 rounded-xl bg-white border border-outline-variant group hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">smartphone</span>
+<span class="text-[12px] text-center font-bold">Android Mobile App</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl bg-white border border-outline-variant group hover:border-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 group-hover:scale-110 transition-transform">phone_iphone</span>
+<span class="text-[12px] text-center font-bold">iOS Mobile App</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl bg-white border border-outline-variant group hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform">laptop_mac</span>
+<span class="text-[12px] text-center font-bold">Web Admin Panel</span>
+</div>
+<div class="flex flex-col items-center p-4 rounded-xl bg-white border border-outline-variant group hover:border-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary mb-2 group-hover:scale-110 transition-transform">database</span>
+<span class="text-[12px] text-center font-bold">Secure Cloud APIs</span>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-l-4 border-l-primary hover:shadow-md transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">my_location</span>
+<h4 class="font-bold text-on-surface">Live GPS-Based Attendance</h4>
+</div>
+<p class="text-label-md text-on-surface-variant">Employees can mark Check-In and Check-Out with live GPS coordinates, timestamp, and device details captured automatically.</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant border-l-4 border-l-secondary hover:shadow-md transition-all">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<h4 class="font-bold text-on-surface">Geo-Location Validation</h4>
+</div>
+<p class="text-label-md text-on-surface-variant">System compares live coordinates with saved office/project site locations and validates attendance within configured radius.</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-md">
+<div class="bg-surface-container-low border border-outline-variant p-6 rounded-2xl">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h4 class="font-bold text-on-surface">Security Features</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-primary text-xs">done</span> SSL Secure APIs</li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-primary text-xs">done</span> Device Binding</li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-primary text-xs">done</span> GPS Mock Location Detection</li>
+<li class="flex items-center gap-2 text-label-md text-on-surface-variant"><span class="material-symbols-outlined text-primary text-xs">done</span> Anti-Spoofing Detection</li>
+</ul>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+<h4 class="font-bold mb-4 text-primary">Technology Stack</h4>
+<div class="space-y-4">
+<div>
+<h5 class="text-[12px] font-bold text-on-surface uppercase tracking-tighter mb-1">Mobile</h5>
+<p class="text-label-md text-on-surface-variant">Kotlin / Java • Swift / SwiftUI • Google Maps SDK</p>
+</div>
+<div>
+<h5 class="text-[12px] font-bold text-on-surface uppercase tracking-tighter mb-1">Backend</h5>
+<p class="text-label-md text-on-surface-variant">Node.js / Laravel / .NET • RESTful APIs • MySQL</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="py-xl px-gutter bg-surface-container-low">
+<div class="max-w-container-max mx-auto rounded-3xl overflow-hidden relative p-xl text-center bg-gradient-to-r from-primary via-on-surface to-secondary text-white shadow-2xl">
+<div class="absolute inset-0 bg-white/5 opacity-20 pointer-events-none"></div>
+<div class="relative z-10">
+<span class="inline-flex items-center gap-2 text-white font-bold mb-4 bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined">auto_awesome</span>
+                Let's Build Something Amazing Together
+            </span>
+<h2 class="text-display-xl font-display-xl mb-6">Ready to Transform Your Business?</h2>
+<p class="max-w-2xl mx-auto text-white/80 mb-10 text-body-lg">
+                Let us handle your IT and digital needs while you focus on growing your business. Our team of experts is ready to bring your vision to life.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-white text-on-surface hover:bg-surface-container-low px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg">
+<span class="material-symbols-outlined">support_agent</span> Get a Free Consultation
+                </button>
+<button class="bg-secondary text-white border border-white/20 hover:bg-secondary/90 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all active:scale-95 shadow-lg">
+<span class="material-symbols-outlined">mail</span> Contact Sales
+                </button>
+</div>
+<div class="mt-12 flex flex-wrap justify-center gap-md text-white/60 text-sm">
+<span>✓ 24/7 Support</span>
+<span>✓ 100% Satisfaction Guarantee</span>
+<span>✓ Free Consultation</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-xl pb-gutter border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-xl text-left">
+<div class="col-span-1 md:col-span-1">
+<div class="text-display-xl font-display-xl text-primary mb-6">MV</div>
+<p class="text-on-surface-variant font-body-md mb-6">
+                Providing innovative IT solutions and converting businesses digitally with cutting-edge technologies.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-6">Services</h4>
+<ul class="space-y-4 text-on-surface-variant font-body-md">
+<li><a class="hover:text-primary transition-colors" href="#">WordPress Development</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">MERN Stack Development</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mobile App Development</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Custom Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-6">Products</h4>
+<ul class="space-y-4 text-on-surface-variant font-body-md">
+<li><a class="hover:text-primary transition-colors" href="#">Attendance Tracking System</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">GPS-Based Solutions</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Admin Dashboards</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Enterprise Solutions</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-6">Contact Us</h4>
+<ul class="space-y-4 text-on-surface-variant font-body-md">
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">mail</span> info@mvservices.com</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">phone</span> +1 (555) 123-4567</li>
+<li class="flex gap-3"><span class="material-symbols-outlined text-primary">location_on</span> Silicon Valley, CA</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-xl pt-gutter border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-md text-on-surface-variant">© 2024 MV Services &amp; Solution. All rights reserved.</p>
+<div class="flex gap-6 text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Back to top -->
+<button class="fixed bottom-gutter right-gutter w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 hover:bg-primary/90 active:scale-90 transition-all z-50 shadow-primary/30" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+    // Button interactions
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.add('scale-95');
+            setTimeout(() => this.classList.remove('scale-95'), 100);
+        });
+    });
+
+    // Dark mode toggle simulation (can be expanded to full feature)
+    function toggleDarkMode() {
+        const html = document.documentElement;
+        if (html.classList.contains('light')) {
+            html.classList.remove('light');
+            html.classList.add('dark');
+            // User could swap theme variables here if needed
+        } else {
+            html.classList.remove('dark');
+            html.classList.add('light');
+        }
+    }
+    
+    // Subtle scroll reveal effect
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.grid > div').forEach(el => {
+        el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+    });
+</script>
+</body></html>
