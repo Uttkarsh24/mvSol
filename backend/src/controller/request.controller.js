@@ -30,7 +30,7 @@ const makeRequest = asyncHandler(async (req, res) => {
             message: message.trim()
         });
 
-        await sendEmail("mvservsol@outlook.com", "New Contact Request", `You have received a new contact request from ${request.name} (${request.email}). Message: ${request.message}`);
+        //await sendEmail("mvservsol@outlook.com", "New Contact Request", `You have received a new contact request from ${request.name} (${request.email}). Message: ${request.message}`);
 
         return res
         .status(200)
@@ -45,7 +45,7 @@ const makeRequest = asyncHandler(async (req, res) => {
 const getAllRequests = asyncHandler(async (req, res) => {
     try {
         const requests = await Contact.find().sort({ createdAt: -1 });
-        await sendEmail(process.env.SMTP_USER, "New Contact Request", `There are currently ${requests.length} contact requests in the system.`);
+        //await sendEmail(process.env.SMTP_USER, "New Contact Request", `There are currently ${requests.length} contact requests in the system.`);
         return res
             .status(200)
             .json(new ApiResponse(200, requests, "All requests retrieved successfully!"));
