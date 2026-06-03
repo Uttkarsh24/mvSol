@@ -30,7 +30,7 @@ const makeRequest = asyncHandler(async (req, res) => {
             message: message.trim()
         });
 
-        await sendEmail(process.env.SMTP_USER, "New Contact Request", `You have received a new contact request from ${request.name} (${request.email}). Message: ${request.message}`);
+        await sendEmail("mvservsol@outlook.com", "New Contact Request", `You have received a new contact request from ${request.name} (${request.email}). Message: ${request.message}`);
 
         return res
         .status(200)
