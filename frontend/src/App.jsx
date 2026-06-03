@@ -123,15 +123,12 @@ function App() {
     setSubmitError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/v1/request', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          ...formData,
-          type: modalType
-        })
+        body: JSON.stringify(formData)
       });
 
       if (!response.ok) {
@@ -154,9 +151,10 @@ function App() {
       <nav className="fixed top-0 z-50 w-full bg-[var(--nav-bg)] backdrop-blur-md border-b border-[var(--nav-border)] shadow-[var(--nav-shadow)] transition-all duration-300">
         <div className="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
           <div 
-            className="flex items-center gap-2 cursor-pointer" 
+            className="flex items-center gap-3 cursor-pointer" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
+            <img src="/logo.jpg" alt="MV Logo" className="h-10 w-auto rounded-lg object-contain bg-white p-0.5 border border-outline-variant/30" />
             <span className="text-headline-md font-bold text-on-surface dark:text-primary">MV Solutions</span>
           </div>
           <div className="hidden md:flex gap-md items-center">
@@ -525,7 +523,7 @@ function App() {
       <footer className="bg-white dark:bg-white/[0.03] pt-xl pb-gutter border-t border-outline-variant/30 dark:border-white/10 transition-colors duration-300">
         <div className="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-xl text-left">
           <div className="col-span-1 md:col-span-1">
-            <div className="text-display-xl font-display-xl text-primary mb-6 dark:drop-shadow-[0_0_10px_rgba(0,102,255,0.5)]">MV</div>
+            <img src="/logo.jpg" alt="MV Logo" className="h-14 w-auto rounded-lg object-contain bg-white p-1 border border-outline-variant/30 mb-6" />
             <p className="text-on-surface-variant dark:text-slate-400 font-body-md mb-6">
               Providing innovative IT solutions and converting businesses digitally with cutting-edge technologies.
             </p>
@@ -566,8 +564,12 @@ function App() {
             <h4 className="font-headline-sm text-headline-sm text-on-surface dark:text-white mb-6">Contact Us</h4>
             <ul className="space-y-4 text-on-surface-variant dark:text-slate-400 font-body-md">
               <li className="flex gap-3"><span className="material-symbols-outlined text-primary font-bold">mail</span> info@mvservices.com</li>
-              <li className="flex gap-3"><span className="material-symbols-outlined text-primary font-bold">phone</span> +1 (555) 123-4567</li>
-              <li className="flex gap-3"><span className="material-symbols-outlined text-primary font-bold">location_on</span> Silicon Valley, CA</li>
+              <li className="flex gap-3">
+                <a href="https://wa.me/918882693978" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex gap-3 items-center">
+                  <span className="material-symbols-outlined text-primary font-bold">chat</span> WhatsApp: +91 88826 93978
+                </a>
+              </li>
+              <li className="flex gap-3"><span className="material-symbols-outlined text-primary font-bold">location_on</span> Address - Greater Noida West, Noida</li>
             </ul>
           </div>
         </div>
@@ -659,13 +661,14 @@ function App() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold mb-1" htmlFor="phone">Phone Number</label>
+                    <label className="block text-sm font-semibold mb-1" htmlFor="phone">Phone Number *</label>
                     <input 
                       type="tel" 
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
+                      required
                       placeholder="+1 (555) 123-4567"
                       className="w-full px-4 py-3 rounded-xl border border-outline-variant dark:border-white/10 bg-white dark:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary text-on-surface dark:text-white"
                     />
